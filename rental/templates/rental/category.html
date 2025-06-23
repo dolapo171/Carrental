@@ -1,0 +1,41 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="category-hero SUV">
+    <div class="overlay">
+        <h1 class="category-title">{{ category|title }}</h1>
+        <p class="category-subtitle">Explore top-rated {{ category|lower }} rentals tailored to your needs.</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    {% if cars %}
+    <p>{{ cars.count }} cars found.</p>
+
+        <div class="row">
+            {% for car in cars %}
+                <div class="col-md-4 mb-4">
+                    <div class="card car-card shadow-sm border-0 h-100">
+                      {% if car.image %}
+                      <img src="{{car.image.url }}" class="card-img-top" alt="{{ car.name }}">
+                
+                  {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ car.name }} ({{ car.brand }} {{ car.model }})</h5>
+                            <p class="text-muted mb-1">₦{{ car.price|intcomma }}
+                            </p>
+                            <span class="badge bg-light text-dark">{{ car.category }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center mt-5">
+            <p class="text-muted">No cars found in this category.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

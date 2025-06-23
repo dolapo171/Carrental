@@ -1,0 +1,44 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+
+
+  
+  <div class="container py-5">
+    {% if cars %}
+      <p class="mb-4 text-muted">{{ cars.count }} cars available.</p>
+      <div class="row">
+        {% for car in cars %}
+          <div class="col-md-4 mb-4">
+            <div class="card car-card shadow-sm border-0 h-100">
+              {% if car.image %}
+              <img src="{{car.image.url }}" class="card-img-top" alt="{{ car.name }}">
+              {% else %}
+                <img src="{% static 'img/car1.jpeg' %}" class="card-img-top" alt="No image available">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ car.name }}</h5>
+                <p class="mb-1"><strong>{{ car.brand }} {{ car.model }}</strong></p>
+                <p class="text-muted mb-1">Price: ₦{{ car.price|intcomma }}</p>
+                <span class="badge bg-secondary">{{ car.category }}</span>
+                {% if user.is_authenticated %}
+                  <a href="{% url 'book_car' car.id %}" class="btn btn-primary w-100 mt-3">Rent Now</a>
+                {% else %}
+                  <a href="{% url 'login' %}?next={% url 'book_car' car.id %}" class="btn btn-outline-primary w-100 mt-3">Login to Rent</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="text-center mt-5">
+        <p class="text-muted">No cars found in this category.</p>
+      </div>
+    {% endif %}
+  </div>
+  {% endblock %}
+  

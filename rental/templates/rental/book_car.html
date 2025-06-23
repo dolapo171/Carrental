@@ -1,0 +1,48 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="row g-0">
+          <div class="col-md-5">
+            {% if car.image %}
+              <img src="{{ car.image.url }}" class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="{{ car.name }}">
+            {% else %}
+              <img src="{% static 'img/car1.jpeg' %}" class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="No image">
+            {% endif %}
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h3 class="card-title">{{ car.name }}</h3>
+              <p class="mb-2"><strong>Brand:</strong> {{ car.brand }}</p>
+              <p class="mb-2"><strong>Model:</strong> {{ car.model }}</p>
+              <p class="mb-2"><strong>Category:</strong> {{ car.category }}</p>
+              <p class="text-muted"><strong>Price:</strong> ₦{{ car.price|intcomma }}</p>
+
+              <hr>
+
+              <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="rental_date" class="form-label">Start Date</label>
+                  <input type="date" name="rental_date" id="rental_date" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="end_date" class="form-label">End Date</label>
+                  <input type="date" name="end_date" id="end_date" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+              </form>
+              <a href="{% url 'car_list' %}" class="btn btn-link mt-3">← Back to Cars</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

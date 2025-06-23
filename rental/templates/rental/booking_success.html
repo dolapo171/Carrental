@@ -1,0 +1,8 @@
+{% extends 'rental/base.html' %}
+{% block content %}
+<div class="container text-center mt-5">
+  <h2 class="text-success">🎉 Booking Confirmed!</h2>
+  <p class="lead">Thank you for booking with us. We’ll reach out to you with more details soon.</p>
+  <a href="{% url 'car_list' %}" class="btn btn-outline-primary mt-3">Back to Car Listings</a>
+</div>
+{% endblock %}

@@ -1,0 +1,241 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  padding-top: 80px; 
+}
+
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+
+.nav-link:hover {
+  color: #ffc107 !important;
+  transition: 0.2s ease-in-out;
+}
+
+
+.carousel-inner img {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.page-container {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form select {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #b30000;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #b30000;
+  border-radius: 6px;
+}
+
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.car-item {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.car-item h3 {
+  margin-bottom: 10px;
+}
+.navbar-nav .nav-link {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.testimonial-card {
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card img {
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+.card-title {
+  color: #222;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #eee;
+}
+.dropdown-menu {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+  transition: 0.2s ease-in-out;
+
+}.category-hero {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.category-hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.category-title {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.category-subtitle {
+  color: #ddd;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+.car-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.car-card:hover {
+  transform: scale(1.03);
+}
+
+.car-card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+
+.category-hero.SUV {
+  background-image: url('/static/rental/img/suv-banner.jpeg');
+}
+
+.category-hero.sedans {
+  background-image: url('/static/rental/img/sedan-banner.jpeg');
+}
+
+.category-hero.trucks {
+  background-image: url('/static/rental/img/truck-banner.jpeg');
+}
+
+.category-hero.electric {
+  background-image: url('/static/rental/img/electric-banner.jpeg');
+}
+body {
+  background-color: #eeeeee;
+    padding-top: 70px;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+input, select {
+  border-radius: 0.5rem !important;
+}
+
+.btn btn-primary {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+

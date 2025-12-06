@@ -31,7 +31,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')  # or wherever you want after login
+            return redirect('home') 
         else:
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'rental/login.html')
@@ -41,7 +41,7 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Send to login after successful signup
+            return redirect('login') 
     else:
         form = UserCreationForm()
     return render(request, 'rental/signup.html', {'form': form})
@@ -59,7 +59,7 @@ def category_view(request, category_name):
     
     # Normalize input
     if category_name.lower().endswith('s'):
-        category_name = category_name[:-1]  # Remove 's' to match DB value like 'SUV'
+        category_name = category_name[:-1]  
     
     print("Normalized category:", category_name)
 
